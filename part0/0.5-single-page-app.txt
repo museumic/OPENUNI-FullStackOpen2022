@@ -1,0 +1,16 @@
+title 0.5_single-page-app
+
+
+note over browser:
+We enter something into the form and press the submit button
+end note
+note over browser:
+The form is fetched from the page with javascript, creates an event handler.
+This handler creates a new note, re renders the notelist on the page.
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa • 201
+note over server:
+The received data contains the JSON data (date, note)
+The Content Type (data/json) tells about the json format
+end note
+server->browser: The Server responds: status code 201 • created!
