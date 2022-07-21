@@ -1,0 +1,24 @@
+title new note
+
+
+note over browser:
+We enter something into the form and press the submit button
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note • 302
+note over server:
+Data is received as a body of a post request
+end note
+server-->browser: server asks the browser to do a new HTTP GET request to the address defined in the header's Location (notes)
+note over server:
+Creates a new note, adds it to the array called notes
+end note
+
+note over browser:
+The browser reloads the page. 
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: css (main.css)
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: js (main.js)
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: data of the notes (data.json)
